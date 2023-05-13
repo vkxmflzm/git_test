@@ -10,7 +10,7 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducers, applyMiddleware(sagaMiddleware));
 
 //적용된 sagaMiddleware로 부터 rootSaga함수 호출
-sagaMiddleware(rootSaga);
+sagaMiddleware.run(rootSaga);
 
 //saga 미들웨어가 적용된 reducer데이터를 store에 저장하고 export
 export default store;

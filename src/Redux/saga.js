@@ -26,7 +26,7 @@ function* returnYoutube() {
 	try {
 		//데이터 응답에 성공했을때
 		const response = yield call(fetchYoutube);
-		put({ type: names.YOUTUBE.success, payload: response.data.items });
+		yield put({ type: names.YOUTUBE.success, payload: response.data.items });
 	} catch (err) {
 		//데이터 응답에 실패했을때
 		yield put({ type: names.YOUTUBE.fail, payload: err });
