@@ -1,5 +1,4 @@
 import { Route, Switch } from 'react-router-dom';
-import { useEffect, useRef } from 'react';
 import { useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import * as names from './redux/actionType';

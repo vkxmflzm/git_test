@@ -22,6 +22,7 @@ function* callYoutube() {
 
 //2- 유튜브 데이터를 호출한 뒤, 결과값으로 새롭게 액션객체를 만들어서 리듀서로 전달해주는 함수
 function* returnYoutube() {
+	console.log('returnYoutube');
 	try {
 		//데이터 응답에 성공했을때
 		const response = yield call(fetchYoutube);
