@@ -1,5 +1,8 @@
 import { Route, Switch } from 'react-router-dom';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import * as names from './redux/actionType';
 
 //common
 import Footer from './components/common/Footer';
@@ -23,6 +26,11 @@ import './scss/style.scss';
 function App() {
 	//Menu에서 forwarding되는 값을 참조객체에 담음
 	const menu = useRef(null);
+	const dispatch = useDispatch();
+
+	useEffect(() => {
+		dispatch({ type: names.YOUTUBE.start });
+	}, [dispatch]);
 
 	return (
 		<>
