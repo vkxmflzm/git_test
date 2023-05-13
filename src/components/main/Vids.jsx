@@ -3,10 +3,7 @@ import { useSelector } from 'react-redux';
 
 function Vids() {
 	const { youtube } = useSelector((store) => store.youtubeReducer);
-
-	useEffect(() => {
-		console.log(youtube);
-	}, [youtube]);
+	console.log(youtube);
 
 	return (
 		<section id='vids' className='myScroll'>

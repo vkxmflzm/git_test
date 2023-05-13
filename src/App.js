@@ -23,11 +23,11 @@ import Parent from './Parent';
 import './scss/style.scss';
 
 function App() {
-	//Menu에서 forwarding되는 값을 참조객체에 담음
 	const menu = useRef(null);
 	const dispatch = useDispatch();
 
 	useEffect(() => {
+		//순서1 - dispatch로 action객체를 리듀서에 전달 {type: 'YOUTUBE_START '}
 		dispatch({ type: names.YOUTUBE.start });
 	}, [dispatch]);
 

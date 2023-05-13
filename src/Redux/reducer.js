@@ -1,17 +1,14 @@
 import { combineReducers } from 'redux';
-// import {YOUTUBE, FLICKR} from './actionType';
 import * as names from './actionType';
 
-//{type: '문자열}, payload: 변경될 값
 const youtubeReducer = (state = { youtube: [] }, action) => {
 	switch (action.type) {
-		// case "YOUTUBE_START"
+		//순서2 - 해당 액션객체를 컴포넌트로부터 받아서 연결된 미들웨어인 saga로 전달
 		case names.YOUTUBE.start:
 			return state;
-		// case "YOUTUBE_SUCCESS"
+		//순서5- saga로 부터 최종 반환된 액션객체를 통해 전역 store데이터 변경
 		case names.YOUTUBE.success:
 			return { ...state, youtube: action.payload };
-		// case YOUTUBE_FAIL
 		case names.YOUTUBE.fail:
 			return { ...state, youtube: action.payload };
 		default:
